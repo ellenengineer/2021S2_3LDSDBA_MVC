@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MVC.Models.Cliente>
+
+@{
+    ViewData["Title"] = "ListaClientes";
+}
+
+<h1>ListaClientes</h1>
+
+<p>
+    <a asp-action="Create">Novo Cliente PF</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de Nasc.
+            </th>
+            <th>
+                Renda
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Endereço
+            </th>
+            <th>
+                CPF
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascFund);
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RendaLucro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Documento)
+                </td>
+
+                <td>
+                    <a href="@Url.Action("Edit", "ClientePF", new { id = item.CodCli })"> Editar</a>
+                    @*<a asp-action="Edit"  asp-route-id="@item.CodCli">Editar</a>*@ |
+                    <a href="@Url.Action("GetClientePF", "ClientePF", new { id = item.CodCli })"> Detalhe</a>
+                    @*<a asp-action="GetClientePF" asp-route-id="@item.CodCli">Detalhe</a>*@ |
+                    @*<a asp-action="Delete" asp-route-id="@item.CodCli">Excluir</a>*@
+                    <a href="@Url.Action("Delete", "ClientePF", new { id = item.CodCli })"> Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

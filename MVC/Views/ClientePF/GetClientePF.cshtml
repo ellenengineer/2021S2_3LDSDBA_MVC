@@ -1,0 +1,60 @@
+﻿@model MVC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhe do Cliente";
+}
+
+<h1>Detalhe do Cliente</h1>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de Nasc.:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNascFund)
+        </dd>
+        <dt class = "col-sm-2">
+            Renda:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RendaLucro)
+        </dd>
+        <dt class = "col-sm-2">
+           Sexo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt class = "col-sm-2">
+            Email:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+           Endereço
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt class = "col-sm-2">
+           CPF:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Documento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CodCli">Editar</a> |
+    <a asp-action="ListaClientes">Lista de Clientes PF</a>
+</div>
